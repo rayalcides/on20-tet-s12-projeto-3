@@ -64,9 +64,36 @@ body{
 #main-content{
     display: flex;
     justify-content: center;
+    height: calc(100vh - 132px);
+    align-items: center;
+}
+
+.card{
+    width: 250px;
+}
+
+.profile-img{
+    max-width: 100%;
+}
+
+.info-box{
+    display: flex;
+}
+
+.profile-infos{
+    display: flex;
+    gap: 10px;
 }
 
 
+.not-foud{
+    height: 80%;
+    
+}
+
+.link-repositorio{
+    cursor: pointer;
+}
 /* estilo footer */
 
 .footer{
