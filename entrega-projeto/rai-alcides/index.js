@@ -64,10 +64,9 @@ getRepositorios = async (user) => {
          if (repos.length > 0) {
            creatRepositoresCard(repos)
          } else {
-            renderNotFoundRepositores()
+            renderNotFoundRepositores(user)
          }
-        
-        
+         
       } catch (error) {
        console.error('capiturei um erro:', error) 
       }
@@ -85,6 +84,28 @@ renderUserNotFound = () => {
     
     `
 }
+
+
+creatRepositoresCard = (repos) => {
+   const reposList = document.createElement('div')
+   reposList.setAttribute('class', 'repositores-List')
+   main.appendChild(reposList)
+
+   repos.forEach(repos => {
+    return reposList = `
+    
+    
+    
+    `
+   });
+}
+
+
+
+renderNotFoundRepositores = (user) => main.innerHTML +=  `
+   <h4 class="not-foud-subtitulo">usuaria não tem repositorio</h4>
+`
+    
 
 
 
