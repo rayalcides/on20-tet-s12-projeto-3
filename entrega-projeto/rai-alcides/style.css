@@ -14,6 +14,7 @@
     --dark: #313131;
     --white: #FFFFFF;
     --grey: #F8F8F8;
+    --silver: #c3c3c3;
 }
 
 body{
@@ -64,36 +65,90 @@ body{
 #main-content{
     display: flex;
     justify-content: center;
-    height: calc(100vh - 132px);
-    align-items: center;
+    /* height: calc(100vh - 132px);
+    align-items: center; */
 }
 
 .card{
+     margin: 3% auto;
     width: 250px;
 }
 
 .profile-img{
     max-width: 100%;
+    border-radius: 8px;
 }
 
-.info-box{
-    display: flex;
+.profile-title{
+   color: var(--primary); 
+   font-weight: 700;
+   font-size: 32px;
+   margin-top: 5px;
+}
+
+.profile-subtitle{
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.profile-description{
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
 }
 
 .profile-infos{
     display: flex;
-    gap: 10px;
+    margin-top: 10px;
+    /* gap: 10px; */
 }
 
+.info-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 4px;
+    width: 66px;
+    height: 40px;
+    background: var(--white);
+    border-radius: 8px;
+}
 
-.not-foud{
-    height: 80%;
-    
+.info-box:last-child{
+    margin-left: 8px;
 }
 
 .link-repositorio{
     cursor: pointer;
 }
+
+/* estilo p/ nem um usuario encontado */
+
+.not-foud{
+    margin: 3% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.not-foud-title{
+    color: var(--primary); 
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.not-foud-subtitulo{
+    color: var(--silver);
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 2px; 
+}
+
+
 /* estilo footer */
 
 .footer{
@@ -115,4 +170,5 @@ body{
 .footer-destaque{
     font-weight: 700;
     color: var(--primary);
+    
 }

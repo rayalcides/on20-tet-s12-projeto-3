@@ -5,7 +5,7 @@ const button = document.querySelector('.search-button')
 button.addEventListener("click", (event) => {
    event.preventDefault()
    const username = input.value.trim()
-   username ? getGitHubUser(username) : alert("Digite uma usuaria valida")
+   username ? getGitHubUser(username) : alert("Digite uma usuária(o) válida(o)")
    getGitHubUser(username)
    input.value = ""
 })
@@ -61,6 +61,7 @@ getRepositorios = async (user) => {
     try {
         const response = await fetch(`https://api.github.com/users/${user}/repos`)
         const repos = await response.json()
+        console.log(repos)
          if (repos.length > 0) {
            creatRepositoresCard(repos)
          } else {
@@ -77,9 +78,9 @@ getRepositorios = async (user) => {
 renderUserNotFound = () => {
     return main.innerHTML = `
     <div class="not-foud">
-      <h2 class="not-foud-title">Usuaria não encontrada</h2>
+      <h2 class="not-foud-title">Usuária não encontrada</h2>
       <h4 class="not-foud-subtitulo">Pesquise novamente</h4>
-      <img src="../../assets/notfound.png" alt="">
+      <img class="not-found-img" src="../../assets/notfound.png" alt="">
     </div>
     
     `
