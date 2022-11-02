@@ -74,48 +74,46 @@ getRepositorios = async (user) => {
 }
 
 
-
-renderUserNotFound = () => {
-    return main.innerHTML = `
-    <div class="not-foud">
-      <h2 class="not-foud-title">Usuária não encontrada</h2>
-      <h4 class="not-foud-subtitulo">Pesquise novamente</h4>
-      <img class="not-found-img" src="../../assets/notfound.png" alt="">
-    </div>
-    
-    `
-}
-
-
 creatRepositoresCard = (repos) => {
-   const reposList = document.createElement('div')
+   let reposList = document.createElement('div')
    reposList.setAttribute('class', 'repositores-List')
    main.appendChild(reposList)
 
-   repos.forEach(repos => {
-    return reposList = `
-    
-    
-    
+   repos.forEach(repositore => {
+    const {name, description, language, stargazers_count } = repositore
+    console.log(reposList)
+    return reposList.innerHTML += `
+    <div class="repository">
+    <h2 class="repository-title">${name}</h2>
+    <p class="repository-description">${description}</p>
+    <div class="repository-details">
+      <p class="repository-text">${language}</p>
+      <p class="repository-icon">
+        <img src="../../assets/star.png" alt="">
+       ${stargazers_count}</p>
+    </div>
+  </div>
     `
-   });
+   })
+}
+
+renderNotFoundRepositores = (username) => main.innerHTML +=  `
+<div class="not-foud-reposirore">
+<h2 class="not-foud-subtitulo">${username} não possui repositório público ainda.</h2>
+</div>
+`
+
+renderUserNotFound = () => {
+  return main.innerHTML = `
+  <div class="not-foud">
+    <h2 class="not-foud-title">Usuária não encontrada</h2>
+    <h4 class="not-foud-subtitulo">Pesquise novamente</h4>
+    <img class="not-found-img" src="../../assets/notfound.png" alt="">
+  </div>
+  
+  `
 }
 
 
 
-renderNotFoundRepositores = (user) => main.innerHTML +=  `
-   <h4 class="not-foud-subtitulo">usuaria não tem repositorio</h4>
-`
     
-
-
-
-
-
-
-// "avatar_url": "https://avatars.githubusercontent.com/u/87040904?v=4",
-// "name": "Rai Alcides",
-// "login": "rayalcides",
-// 	"bio": "programadora iniciante do Front-end",
-// 	"public_repos": 14,
-// 	"followers": 3,

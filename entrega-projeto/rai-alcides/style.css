@@ -14,7 +14,7 @@
     --dark: #313131;
     --white: #FFFFFF;
     --grey: #F8F8F8;
-    --silver: #c3c3c3;
+    --silver: #808080;
 }
 
 body{
@@ -65,6 +65,7 @@ body{
 #main-content{
     display: flex;
     justify-content: center;
+    width: 100vw;
     /* height: calc(100vh - 132px);
     align-items: center; */
 }
@@ -121,9 +122,72 @@ body{
     margin-left: 8px;
 }
 
+
+/* cards repositorios */
 .link-repositorio{
     cursor: pointer;
 }
+
+.repositores-List{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 70%;
+    gap: 32px;
+    margin: 50px;
+}
+
+.repository{
+   width: 440px;
+   height: 140px;
+   background-color: var(--white);
+   padding: 20px;
+   border-radius: 8px;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+}
+
+.repository-title{
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.repository-description{
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--silver);
+}
+
+.repository-details{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repository-text{
+    font-size: 10px; 
+    color: var(--silver);
+}
+
+.repository-icon{
+    font-size: 12px; 
+    color: var(--silver);
+    display: flex;
+    width: 28px;
+    justify-content: space-between;
+}
+
+.not-foud-reposirore{
+    margin: 0 auto;
+    align-self: center;
+}
+
 
 /* estilo p/ nem um usuario encontado */
 
