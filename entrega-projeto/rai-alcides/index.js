@@ -27,7 +27,7 @@ getGitHubUser = async (user) => {
 }
 
 createCard = (user) => {
-    const {avatar_url, name, login, bio, followers, public_repos, } = user
+    const {avatar_url, name, login, bio, followers, public_repos } = user
     main.innerHTML = `
       <div class="card">
        <img class="profile-img" src=${avatar_url} alt="">
