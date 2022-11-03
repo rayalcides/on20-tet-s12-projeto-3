@@ -147,6 +147,11 @@ main{
     text-align: center;
 }
 
+.followersss:hover{
+    transform: scale(1.2);
+    background-color: var(--white);
+}
+
 .followers-title{
     font-size: 14px;
     word-break: break-all;
@@ -178,6 +183,7 @@ main{
     margin: 50px;
 }
 
+
 .repository{
    width: 440px;
    height: 140px;
@@ -187,6 +193,12 @@ main{
    display: flex;
    flex-direction: column;
    position: relative;
+   cursor: pointer;
+}
+
+.repository:hover{
+    transform: scale(1.1);
+   background-color: var(--white);
 }
 
 .repository-title{
