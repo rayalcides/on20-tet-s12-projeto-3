@@ -1,6 +1,7 @@
 const main = document.getElementById('main-content')
 const input = document.querySelector('.search-input')
 const button = document.querySelector('.search-button')
+const lista = document.querySelector('.lista')
 
 button.addEventListener("click", (event) => {
    event.preventDefault()
@@ -8,6 +9,7 @@ button.addEventListener("click", (event) => {
    username ? getGitHubUser(username) : alert("Digite uma usuária(o) válida(o)")
    getGitHubUser(username)
    input.value = ""
+   
 })
 
 getGitHubUser = async (user) => {
@@ -17,6 +19,7 @@ getGitHubUser = async (user) => {
       if (response.status == 404) {
         renderUserNotFound()
       } else if (response.status = 200){
+        lista.innerHTML = ""
         createCard(userData)
       }
      
@@ -35,10 +38,12 @@ createCard = (user) => {
        <h4 class="profile-subtitle">${login}</h4>
        <p class="profile-description">${bio ? bio : ""}</p>
        <div class="profile-infos">
+       <a class="link-followers">
          <div class="info-box">
            <img src="../../assets/people_outline.png" alt="">
            <p>${followers}</p>
          </div>
+         </a>
          <a class="link-repositorio">
           <div class="info-box">
            <img src="../../assets/Vector.png" alt="">
@@ -48,6 +53,14 @@ createCard = (user) => {
        </div>
       </div>
    `
+
+   const linkFollowers = document.querySelector(".link-followers")
+
+   linkFollowers.addEventListener('click', (evento) => {
+    evento.preventDefault()
+    getFollowers(login)
+   })
+
    const linkRepositores = document.querySelector(".link-repositorio")
 
    linkRepositores.addEventListener('click', (evento) => {
@@ -57,12 +70,47 @@ createCard = (user) => {
    
 }
 
+getFollowers = async (user) => {
+  try {
+    const response = await fetch(`https://api.github.com/users/${user}/followers`)
+    const followers = await response.json()
+    console.log(followers)
+    if (followers.length > 0) {
+      lista.innerHTML = ""
+      creatCardFollowers(followers)
+    } else {
+      renderNotFoundFollowers(user)
+    }
+  } catch (error) {
+    console.error('capiturei um erro:', error) 
+  }
+}
+
+
+creatCardFollowers = (followers) => {
+ const followersList = document.createElement('div')
+ followersList.setAttribute('class', 'followers-list')
+ lista.appendChild(followersList)
+
+ followers.forEach(followerss => {
+  const {login, avatar_url} = followerss
+   return followersList.innerHTML += `
+   <div class="followersss">
+     <img class="followers-img" src=${avatar_url} alt="">
+     <h2 class="followers-title">${login}</h2>
+   </div>
+   `
+ })
+}
+
+
 getRepositorios = async (user) => {
     try {
         const response = await fetch(`https://api.github.com/users/${user}/repos`)
         const repos = await response.json()
-        console.log(repos)
+        // console.log(repos)
          if (repos.length > 0) {
+          lista.innerHTML = ""
            creatRepositoresCard(repos)
          } else {
             renderNotFoundRepositores(user)
@@ -77,11 +125,11 @@ getRepositorios = async (user) => {
 creatRepositoresCard = (repos) => {
    let reposList = document.createElement('div')
    reposList.setAttribute('class', 'repositores-List')
-   main.appendChild(reposList)
+   lista.appendChild(reposList)
 
    repos.forEach(repositore => {
     const {name, description, language, stargazers_count } = repositore
-    console.log(reposList)
+    // console.log(reposList)
     return reposList.innerHTML += `
     <div class="repository">
     <h2 class="repository-title">${name}</h2>

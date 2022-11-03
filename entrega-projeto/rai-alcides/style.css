@@ -62,16 +62,20 @@ body{
 
 /* estilo principal */
 
+main{
+    display: flex;
+    padding-bottom: 40px;
+}
+
 #main-content{
     display: flex;
     justify-content: center;
     width: 100vw;
-    /* height: calc(100vh - 132px);
-    align-items: center; */
+    padding: 40px;
 }
 
 .card{
-     margin: 3% auto;
+    margin: 3% auto;
     width: 250px;
 }
 
@@ -118,14 +122,51 @@ body{
     border-radius: 8px;
 }
 
-.info-box:last-child{
-    margin-left: 8px;
+.info-box:hover{
+    transform: scale(1.2);
+   background-color: var(--white); 
 }
 
+.info-box:last-child{
+    margin-left: 10px;
+}
+
+/* cardes seguidores */
+
+.followers-list{
+    padding: 30px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.followersss{
+    width: 100px;
+    text-align: center;
+}
+
+.followers-title{
+    font-size: 14px;
+    word-break: break-all;
+
+}
+
+.followers-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
 
 /* cards repositorios */
-.link-repositorio{
+.link-repositorio, .link-followers{
     cursor: pointer;
+}
+
+.link-repositorio:hover{
+    transform: scale(1.2);
+   background-color: var(--white);
 }
 
 .repositores-List{
@@ -225,6 +266,7 @@ body{
     height: 60px;
     color: var(--dark);
     background-color: var(--white);
+    /* margin-top: 20px; */
 }
 
 .footer p{
