@@ -79,6 +79,7 @@ getFollowers = async (user) => {
       lista.innerHTML = ""
       creatCardFollowers(followers)
     } else {
+      lista.innerHTML = ""
       renderNotFoundFollowers(user)
     }
   } catch (error) {
@@ -102,6 +103,12 @@ creatCardFollowers = (followers) => {
    `
  })
 }
+
+renderNotFoundFollowers = (username) => main.innerHTML +=  `
+<div class="not-foud-reposirore">
+<h2 class="not-foud-subtitulo">${username} não possui seguidores ainda.</h2>
+</div>
+`
 
 
 getRepositorios = async (user) => {
