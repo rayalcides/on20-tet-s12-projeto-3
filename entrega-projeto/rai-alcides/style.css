@@ -150,6 +150,7 @@ main{
 .followers-title{
     font-size: 14px;
     word-break: break-all;
+    color: var(--primary);
 
 }
 
