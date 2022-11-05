@@ -110,7 +110,6 @@ renderNotFoundFollowers = (username) => main.innerHTML +=  `
 </div>
 `
 
-
 getRepositorios = async (user) => {
     try {
         const response = await fetch(`https://api.github.com/users/${user}/repos`)
