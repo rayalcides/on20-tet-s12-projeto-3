@@ -70,6 +70,7 @@ main{
 #main-content{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100vw;
     padding: 40px;
 }
