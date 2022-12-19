@@ -40,13 +40,13 @@ createCard = (user) => {
        <div class="profile-infos">
        <a class="link-followers">
          <div class="info-box">
-           <img src="../../assets/people_outline.png" alt="">
+           <img src="assets/people_outline.png" alt="">
            <p>${followers}</p>
          </div>
          </a>
          <a class="link-repositorio">
           <div class="info-box">
-           <img src="../../assets/Vector.png" alt="">
+           <img src="assets/Vector.png" alt="">
            <p>${public_repos}</p>
          </div>
         </a>
@@ -143,7 +143,7 @@ creatRepositoresCard = (repos) => {
     <div class="repository-details">
       <p class="repository-text">${language}</p>
       <p class="repository-icon">
-        <img src="../../assets/star.png" alt="">
+        <img src="assets/star.png" alt="">
        ${stargazers_count}</p>
     </div>
   </div>
@@ -162,7 +162,7 @@ renderUserNotFound = () => {
   <div class="not-foud">
     <h2 class="not-foud-title">Usuária não encontrada</h2>
     <h4 class="not-foud-subtitulo">Pesquise novamente</h4>
-    <img class="not-found-img" src="../../assets/notfound.png" alt="">
+    <img class="not-found-img" src="assets/notfound.png" alt="">
   </div>
   
   `
